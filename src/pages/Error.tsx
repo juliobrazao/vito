@@ -4,19 +4,23 @@ import CustomModal from "../components/CustomModal";
 import ErrorReportForm from "../components/ErrorReportForm";
 import { useContext } from "react";
 import { MainContext } from "../contexts/MainContext";
+import Header from "../components/Header";
+import { useTranslation } from "react-i18next";
 
 export default function Error() {
+  const { t } = useTranslation();
   const { handleToggleModal } = useContext(MainContext);
 
   return (
     <>
+      <Header />
       <Container>
-        <h1>This page does not exists!</h1>
+        <h1>{t("error.message")}</h1>
 
         <Button variant="danger" onClick={handleToggleModal}>
-          Send Error Report
+          {t("error.title")}
         </Button>
-        <CustomModal title="Error Report" content={<ErrorReportForm />} />
+        <CustomModal title={t("error.title")} content={<ErrorReportForm />} />
       </Container>
     </>
   );

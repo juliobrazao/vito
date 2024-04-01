@@ -1,0 +1,17 @@
+{
+  "main": {
+    "title": "Ensino Medio",
+    "search": "Busca",
+    "language": "Idioma",
+    "english": "Ingles",
+    "portuguese": "Portugues",
+    "raise_modal": "Invocar Modal"
+  },
+  "error": {
+    "message": "Esta página não existe!",
+    "title": "Reporte de Erros",
+    "label": "Por favor, descreva os detalhes:",
+    "dont_want_report": "Não quero reportar!",
+    "send_report": "Enviar Reporte"
+  }
+}

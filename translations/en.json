@@ -1,0 +1,17 @@
+{
+  "main": {
+    "title": "High School",
+    "search": "Search",
+    "language": "Language",
+    "english": "English",
+    "portuguese": "Portuguese",
+    "raise_modal": "Raise Modal"
+  },
+  "error": {
+    "message": "This page does not exists!",
+    "title": "Error Report",
+    "label": "Please, decribe some detail:",
+    "dont_want_report": "Do not want to report!",
+    "send_report": "Send Report"
+  }
+}

@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { MainContext } from "../contexts/MainContext";
+import { useTranslation } from "react-i18next";
 
 const ErrorReportSchema = z.object({
   detail: z
@@ -15,6 +16,7 @@ const ErrorReportSchema = z.object({
 type ErrorReportType = z.infer<typeof ErrorReportSchema>;
 
 export default function ErrorReportForm() {
+  const { t } = useTranslation();
   const { handleToggleModal } = useContext(MainContext);
 
   const {
@@ -35,7 +37,7 @@ export default function ErrorReportForm() {
   return (
     <>
       <form onSubmit={handleSubmit(handleSendErrorReport)}>
-        <label className="form-label">Please, describe some detail:</label>
+        <label className="form-label">{t("error.label")}</label>
         <textarea {...register("detail")} rows={3} className="form-control" />
         <small id="emailHelpId" className="form-text text-danger">
           {errors && errors.detail?.message}
@@ -49,7 +51,7 @@ export default function ErrorReportForm() {
                 className="w-100"
                 onClick={handleToggleModal}
               >
-                Do not want to report!
+                {t("error.dont_want_report")}
               </Button>
             </div>
           </div>
@@ -57,7 +59,7 @@ export default function ErrorReportForm() {
           <div className="col-sm-6">
             <div className="mt-3">
               <Button variant="danger" className="w-100" type="submit">
-                Send Report
+                {t("error.send_report")}
               </Button>
             </div>
           </div>
